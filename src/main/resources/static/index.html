@@ -1,13 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CI CD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 축하합니다 🎉</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                    135deg,
+                    #ff69b4,
+                    #ffd700,
+                    #7fffd4,
+                    #87cefa
+            );
+            background-size: 400% 400%;
+            animation: backgroundMove 5s ease infinite;
+        }
+
+        .container {
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 0.8s infinite alternate;
+        }
+
+        .cake {
+            font-size: 7rem;
+            margin: 20px;
+        }
+
+        .main-message {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .sub-message {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .important {
+            margin-top: 30px;
+            padding: 20px;
+            border: 3px dashed #ff4d6d;
+            border-radius: 15px;
+
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ff1744;
+        }
+
+        .confetti {
+            position: absolute;
+            top: -50px;
+            font-size: 2rem;
+            animation: fall linear infinite;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0) scale(1);
+            }
+            to {
+                transform: translateY(-15px) scale(1.05);
+            }
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-10vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(120vh) rotate(720deg);
+            }
+        }
+
+        @keyframes backgroundMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
 </head>
+
 <body>
-<h1>생일 축하드려요!!!!!!!!!!!!</h1>
+
+<div class="container">
+
+    <h1>🎉🎊 축하합니다!!! 🎊🎉</h1>
+
+    <div class="cake">
+        🎂
+    </div>
+
+    <div class="main-message">
+        오늘은 정말 특별한 날입니다.
+    </div>
+
+    <div class="sub-message">
+        당신이 이 세상에 존재한다는 사실만으로도<br>
+        오늘은 충분히 축하받을 가치가 있습니다.<br><br>
+
+        🎁 행복하시고<br>
+        🎈 좋은 일만 가득하시고<br>
+        🎉 맛있는 것도 많이 드시고<br>
+        🥳 아무튼 진심으로 축하드립니다.
+    </div>
+
+</div>
+
+<script>
+    const emojis = ["🎉", "🎊", "🎈", "✨", "🥳", "🎁"];
+
+    for (let i = 0; i < 60; i++) {
+        const confetti = document.createElement("div");
+
+        confetti.className = "confetti";
+        confetti.textContent =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.animationDuration =
+            (Math.random() * 3 + 2) + "s";
+
+        confetti.style.animationDelay =
+            (Math.random() * 5) + "s";
+
+        document.body.appendChild(confetti);
+    }
+</script>
+
 </body>
 </html>
